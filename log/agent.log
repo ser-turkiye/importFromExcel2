@@ -17314,3 +17314,394 @@ java.io.IOException: directory "C:\Users\BBayhan\AppData\Local\Temp\2\BBayhan\se
 2023-12-12 10:57:31 INFO  SessionRefreshTask:552 - session with id 'acfdeebf-b19f-4f01-8f11-8e33677ceb5e' removed as master session from SessionRefreshTask.
 2023-12-12 10:57:31 INFO  SEDNASpringContext:106 - closing "SEDNA Client Framework server-local context @ 1345906676" ...
 2023-12-12 10:57:31 INFO  SEDNASpringContext:106 - closing "SEDNA Client Framework Global Context @ 1834727126" ...
+2023-12-14 16:03:41 INFO  DocumentServer:580 - Provided server names: 127.0.0.1
+2023-12-14 16:03:41 INFO  DocumentServer:581 - Provided ports: 8080
+2023-12-14 16:03:41 INFO  config:106 - Set SysDBName to: >system<
+2023-12-14 16:03:41 INFO  config:42 - Set SeratioServerName to: >127.0.0.1<
+2023-12-14 16:03:41 INFO  config:47 - Set SeratioPort to: >8080<
+2023-12-14 16:03:41 INFO  config:58 - SeratioReadTimeout not set or not correct. Set default to:60
+2023-12-14 16:03:41 INFO  config:66 - SeratioLingerTime not set or not correct. Set default to:0
+2023-12-14 16:03:41 INFO  config:72 - MaxDescLenFix not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:81 - FastSeratioInit not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:93 - MaxSeratioConnections not set or not correct. Set default to:10
+2023-12-14 16:03:41 INFO  config:111 - Set ArchivServerName to: >127.0.0.1<
+2023-12-14 16:03:41 INFO  config:128 - Set ArchivPort to: >8080<
+2023-12-14 16:03:41 INFO  config:139 - MaxConnections not set or not correct. Set default to:10
+2023-12-14 16:03:41 INFO  config:147 - MaxDescLen not set or not correct. Set default to:250
+2023-12-14 16:03:41 INFO  config:155 - DefaultHitLimit not set or not correct. Set default to:0
+2023-12-14 16:03:41 INFO  config:163 - ArchiveReadTimeout not set or not correct. Set default to:60
+2023-12-14 16:03:41 INFO  config:171 - ArchiveLingerTime not set or not correct. Set default to:-1
+2023-12-14 16:03:41 INFO  config:176 - Set OperatorFix to: >0<
+2023-12-14 16:03:41 INFO  config:187 - MaxSizeDocIDQuery not set or not correct. Set default to:40
+2023-12-14 16:03:41 INFO  config:195 - MaxSizeBeforBufferRequest not set or not correct. Set default to:5242880
+2023-12-14 16:03:41 INFO  config:203 - FileLimit not set or not correct. Set default to:100000
+2023-12-14 16:03:41 INFO  config:210 - ValueDescriptorTransformation not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:219 - GenericQuery not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:228 - Ita423ORAFix not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:237 - FileFDEShortFormatDescFix not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:246 - ClassicAnnotations not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:255 - EthFix not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:264 - SessionReg not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:274 - UseASSA not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:284 - ExceptionForUnknownChar not set. Set default to : true
+2023-12-14 16:03:41 INFO  config:294 - ExceptionForEmptyPictureBox not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:304 - SQLValueEscaping not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:395 - ExceptionIsEmptyDesc not set. Set default to : false
+2023-12-14 16:03:41 INFO  config:461 - ClassicAnnotationKey not set. Set default to : T9700
+2023-12-14 16:03:41 INFO  config:514 - ItaErrorMsgFile not set. Set default to : null
+2023-12-14 16:03:41 INFO  config:42 - metaDataDefaultSourceClass not set. Set default to:de.serac.bluelineimpl.metadata.SWASeratioMetaDataSource
+2023-12-14 16:03:41 INFO  config:45 - Set metaDataDefaultSourceClass to:de.serac.bluelineimpl.metadata.SWASeratioMetaDataSource
+2023-12-14 16:03:41 INFO  config:58 - metaDataInit not set. Set default to:127.0.0.1:8080:system
+2023-12-14 16:03:41 INFO  config:61 - Set metaDataInit to:127.0.0.1:8080:system
+2023-12-14 16:03:41 INFO  config:75 - userCacheDisabled not set. Set default to:false
+2023-12-14 16:03:41 INFO  config:89 - FormIniFile not set. Set default to : null
+2023-12-14 16:03:41 INFO  config:47 - FormIniFile is set to:null
+2023-12-14 16:03:41 INFO  config:49 - PdfHostName is set to:null
+2023-12-14 16:03:41 INFO  config:51 - NewPdfExportFilter is:false
+2023-12-14 16:03:41 INFO  config:53 - UsePdflib3 is:3
+2023-12-14 16:03:41 INFO  config:55 - useThreadLocalPDFLib is:false
+2023-12-14 16:03:42 INFO  config:57 - HitListColors is set
+2023-12-14 16:03:42 INFO  config:59 - PdfProvider is:2
+2023-12-14 16:03:42 INFO  config:61 - FDEFormatMode is:0
+2023-12-14 16:03:42 INFO  config:63 - CreatePdfAnnotations is:true
+2023-12-14 16:03:42 INFO  config:65 - IgnoreEmptyFilesInPDF is:false
+2023-12-14 16:03:42 INFO  config:68 - CreateErrorPages is:true
+2023-12-14 16:03:42 INFO  config:78 - Doesn't use PDFHost.
+2023-12-14 16:03:42 INFO  filter:56 - UseXFilter is set to:true
+2023-12-14 16:03:42 INFO  trace:34 - ArchiveTrace not set. Set default to : false
+2023-12-14 16:03:42 INFO  trace:43 - ArchiveTraceDir not set->ArchiveTrace disabled
+2023-12-14 16:03:42 INFO  trace:57 - SeratioTrace not set. Set default to : false
+2023-12-14 16:03:42 INFO  trace:66 - SeratioTraceDir not set->SeratioTrace disabled
+2023-12-14 16:03:42 INFO  trace:80 - TraceFileExtension not set. Set default to : .trace
+2023-12-14 16:03:42 INFO  config:37 - No definition for Signaturemanager->Ignored.
+2023-12-14 16:03:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'com.ser.sedna.clientimpl.util.SEDNAThreadFactory#10225ad1' of type [com.ser.sedna.clientimpl.util.SEDNAThreadFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-14 16:03:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'scheduler' of type [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-14 16:03:52 INFO  SessionRefreshTask:659 - RefreshPeriod value is set to 60000ms.
+2023-12-14 16:03:52 INFO  SessionRefreshTask:675 - SessionRefreshFactor value is set to '0.4'.
+2023-12-14 16:03:52 INFO  SEDNASpringContext:161 - "SEDNA Client Framework Global Context @ 718510084" created
+2023-12-14 16:03:55 INFO  SEDNASpringContext:161 - "SEDNA Client Framework server-local context @ 533461890" created
+2023-12-14 16:03:57 INFO  ReflectionServiceFactoryBean:130 - Creating Service {http://types.xf.transfer.services.sedna.ser.com}SessionService from class com.ser.sedna.services.transfer.xf.ws.SessionServiceWS
+2023-12-14 16:04:01 FATAL DocumentServer:2279 - SEDNA server seems to be DEAD: com.ser.sedna.client.exception.ServerException/com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+2023-12-14 16:04:01 WARN  DocumentServer:2280 - SEDNA server seems to be DEAD
+com.ser.sedna.client.exception.ServerException: com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.session.ThrowSpecialOrCreateServerException.create(ThrowSpecialOrCreateServerException.java:11)
+	at com.ser.sedna.clientimpl.session.ThrowSpecialOrCreateServerException.process(ThrowSpecialOrCreateServerException.java:21)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:156)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:161)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.getCustomerNames(SEDNAServerImpl.java:197)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.getCustomerNames(SEDNAServerImpl.java:179)
+	at com.ser.sedna.client.bluelineimpl.system.DocumentServer.isAlive(DocumentServer.java:2276)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory$PseudoParallelIsAliveCallable.callAction(DocumentServerFactory.java:144)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory$PseudoParallelIsAliveCallable.callAction(DocumentServerFactory.java:135)
+	at de.ser.sst.shared.runtime.PseudoParallelCallable.call(PseudoParallelCallable.java:37)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory.getDocumentServer(DocumentServerFactory.java:72)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createSessionWrapper(SessionFactory.java:105)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:46)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:22)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:536)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:528)
+	at de.ser.sst.shared.pool.UsageBasedPool.lambda$fillEntry$3(UsageBasedPool.java:166)
+	at de.ser.sst.shared.pool.AbstractPool.lambda$trackedTask$9(AbstractPool.java:581)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at de.ser.sst.shared.pool.AbstractPoolConfiguration$1$1.run(AbstractPoolConfiguration.java:64)
+Caused by: com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.newServiceException(SessionServiceImpl.java:1220)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.newServiceException(SessionServiceImpl.java:72)
+	at com.ser.sedna.clientimpl.services.SEDNAService.throwSpecialOrCreateServiceException(SEDNAService.java:317)
+	at com.ser.sedna.clientimpl.services.SEDNAService.logAndCreateServiceException(SEDNAService.java:329)
+	at com.ser.sedna.clientimpl.services.SEDNAService.logAndCreateServiceException(SEDNAService.java:302)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:103)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl$$FastClassBySpringCGLIB$$d5e6cc3d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.ser.sedna.clientimpl.cache.CacheInterceptor.proceed(CacheInterceptor.java:294)
+	at com.ser.sedna.clientimpl.cache.CacheInterceptor.cacheSessionService(CacheInterceptor.java:161)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl$$EnhancerBySpringCGLIB$$38829308.getCustomerNames(<generated>)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.lambda$getCustomerNames$1(SEDNAServerImpl.java:197)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:154)
+	... 22 more
+Caused by: com.ser.sedna.client.exception.ServerException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.callServerMethod(CXFCommunicationHandler.java:204)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler$1.callWithContextClassLoader(AbstractCommunicationHandler.java:279)
+	at de.ser.sst.shared.lang.LangBaseUtils.withContextClassLoader(LangBaseUtils.java:4433)
+	at de.ser.sst.shared.lang.CallWithContextClassLoader.call2(CallWithContextClassLoader.java:40)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler.callServerMethodSynchronized(AbstractCommunicationHandler.java:311)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler.invokeRemoteMethod(AbstractCommunicationHandler.java:122)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:109)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:101)
+	... 46 more
+Caused by: org.apache.cxf.interceptor.Fault: Could not send Message.
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:67)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:528)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:439)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:354)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:312)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.frontend.ClientProxy.invoke(ClientProxy.java:81)
+	at com.ser.sedna.clientimpl.comm.soap.Service.invoke(Service.java:28)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.lambda$callServerMethod$0(CXFCommunicationHandler.java:147)
+	at de.ser.sst.shared.lang.InvocationLocal.run(InvocationLocal.java:36)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.lambda$callServerMethod$3(CXFCommunicationHandler.java:147)
+	at de.ser.sst.shared.pool.SimplePool.withElement(SimplePool.java:35)
+	at com.ser.sedna.services.transfer.cxf.ClientServices$Pool.execute(ClientServices.java:158)
+	at com.ser.sedna.services.transfer.cxf.ClientServices.withService(ClientServices.java:175)
+	at com.ser.sedna.clientimpl.comm.soap.CXFServices.withService(CXFServices.java:21)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.callServerMethod(CXFCommunicationHandler.java:160)
+	... 53 more
+Caused by: java.net.ConnectException: ConnectException invoking http://127.0.0.1:8080/sedna-transfer-service-xf/services/SessionService: Connection refused: connect
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1418)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1402)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:188)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:689)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:63)
+	... 69 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.setupWrappedStream(URLConnectionHTTPConduit.java:274)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1361)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1322)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.onFirstWrite(URLConnectionHTTPConduit.java:307)
+	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
+	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1374)
+	... 73 more
+2023-12-14 16:04:01 WARN  pool:107 - com.ser.blueline.sessionpool.InstantiationException: Could not create document server instance. No active csb node found.
+com.ser.blueline.sessionpool.InstantiationException: Could not create document server instance. No active csb node found.
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory.getDocumentServer(DocumentServerFactory.java:80)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createSessionWrapper(SessionFactory.java:105)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:46)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:22)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:536)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:528)
+	at de.ser.sst.shared.pool.UsageBasedPool.lambda$fillEntry$3(UsageBasedPool.java:166)
+	at de.ser.sst.shared.pool.AbstractPool.lambda$trackedTask$9(AbstractPool.java:581)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at de.ser.sst.shared.pool.AbstractPoolConfiguration$1$1.run(AbstractPoolConfiguration.java:64)
+2023-12-14 16:04:02 FATAL DocumentServer:2279 - SEDNA server seems to be DEAD: com.ser.sedna.client.exception.ServerException/com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+2023-12-14 16:04:02 WARN  DocumentServer:2280 - SEDNA server seems to be DEAD
+com.ser.sedna.client.exception.ServerException: com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.session.ThrowSpecialOrCreateServerException.create(ThrowSpecialOrCreateServerException.java:11)
+	at com.ser.sedna.clientimpl.session.ThrowSpecialOrCreateServerException.process(ThrowSpecialOrCreateServerException.java:21)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:156)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:161)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.getCustomerNames(SEDNAServerImpl.java:197)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.getCustomerNames(SEDNAServerImpl.java:179)
+	at com.ser.sedna.client.bluelineimpl.system.DocumentServer.isAlive(DocumentServer.java:2276)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory$PseudoParallelIsAliveCallable.callAction(DocumentServerFactory.java:144)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory$PseudoParallelIsAliveCallable.callAction(DocumentServerFactory.java:135)
+	at de.ser.sst.shared.runtime.PseudoParallelCallable.call(PseudoParallelCallable.java:37)
+	at com.ser.blueline.sessionpool.impl.DocumentServerFactory.getDocumentServer(DocumentServerFactory.java:72)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createSessionWrapper(SessionFactory.java:105)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:46)
+	at com.ser.blueline.sessionpool.impl.SessionFactory.createPooledElement(SessionFactory.java:22)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:536)
+	at de.ser.sst.shared.pool.AbstractPool.newElement(AbstractPool.java:528)
+	at de.ser.sst.shared.pool.UsageBasedPool.lambda$getElement$4(UsageBasedPool.java:329)
+	at de.ser.sst.shared.pool.AbstractPool.callSynchronouslyWithConcurrencyLimit(AbstractPool.java:567)
+	at de.ser.sst.shared.pool.AbstractPool.newElementSynchronously(AbstractPool.java:555)
+	at de.ser.sst.shared.pool.UsageBasedPool.getElement(UsageBasedPool.java:329)
+	at de.ser.sst.shared.pool.KeyedPool.getElement(KeyedPool.java:90)
+	at com.ser.blueline.sessionpool.impl.Dx4SessionPool.getSessionInternal(Dx4SessionPool.java:427)
+	at com.ser.blueline.sessionpool.impl.Dx4SessionPool.getSession(Dx4SessionPool.java:151)
+	at junit.PoolFromProps.getSession(PoolFromProps.java:85)
+	at junit.AgentTester.retrieveBinding(AgentTester.groovy:94)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:318)
+	at junit.ExampleTests.retrieveBinding(ExampleTests.groovy:18)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: com.ser.sedna.client.sessionservice.SessionServiceException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.newServiceException(SessionServiceImpl.java:1220)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.newServiceException(SessionServiceImpl.java:72)
+	at com.ser.sedna.clientimpl.services.SEDNAService.throwSpecialOrCreateServiceException(SEDNAService.java:317)
+	at com.ser.sedna.clientimpl.services.SEDNAService.logAndCreateServiceException(SEDNAService.java:329)
+	at com.ser.sedna.clientimpl.services.SEDNAService.logAndCreateServiceException(SEDNAService.java:302)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:103)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl$$FastClassBySpringCGLIB$$d5e6cc3d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.ser.sedna.clientimpl.cache.CacheInterceptor.proceed(CacheInterceptor.java:294)
+	at com.ser.sedna.clientimpl.cache.CacheInterceptor.cacheSessionService(CacheInterceptor.java:161)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl$$EnhancerBySpringCGLIB$$38829308.getCustomerNames(<generated>)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.lambda$getCustomerNames$1(SEDNAServerImpl.java:197)
+	at com.ser.sedna.clientimpl.session.SEDNAServerImpl.withDummySession(SEDNAServerImpl.java:154)
+	... 71 more
+Caused by: com.ser.sedna.client.exception.ServerException: Could not send Message. If the connection-data is correct and the server is running, ensure the system-property "http.maxConnections" (current value:  JDK-default (5)) is high enough for the load.
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.callServerMethod(CXFCommunicationHandler.java:204)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler$1.callWithContextClassLoader(AbstractCommunicationHandler.java:279)
+	at de.ser.sst.shared.lang.LangBaseUtils.withContextClassLoader(LangBaseUtils.java:4433)
+	at de.ser.sst.shared.lang.CallWithContextClassLoader.call2(CallWithContextClassLoader.java:40)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler.callServerMethodSynchronized(AbstractCommunicationHandler.java:311)
+	at com.ser.sedna.clientimpl.comm.AbstractCommunicationHandler.invokeRemoteMethod(AbstractCommunicationHandler.java:122)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:109)
+	at com.ser.sedna.clientimpl.services.sessionservice.SessionServiceImpl.getCustomerNames(SessionServiceImpl.java:101)
+	... 95 more
+Caused by: org.apache.cxf.interceptor.Fault: Could not send Message.
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:67)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:528)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:439)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:354)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:312)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.frontend.ClientProxy.invoke(ClientProxy.java:81)
+	at com.ser.sedna.clientimpl.comm.soap.Service.invoke(Service.java:28)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.lambda$callServerMethod$0(CXFCommunicationHandler.java:147)
+	at de.ser.sst.shared.lang.InvocationLocal.run(InvocationLocal.java:36)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.lambda$callServerMethod$3(CXFCommunicationHandler.java:147)
+	at de.ser.sst.shared.pool.SimplePool.withElement(SimplePool.java:35)
+	at com.ser.sedna.services.transfer.cxf.ClientServices$Pool.execute(ClientServices.java:158)
+	at com.ser.sedna.services.transfer.cxf.ClientServices.withService(ClientServices.java:175)
+	at com.ser.sedna.clientimpl.comm.soap.CXFServices.withService(CXFServices.java:21)
+	at com.ser.sedna.clientimpl.comm.soap.CXFCommunicationHandler.callServerMethod(CXFCommunicationHandler.java:160)
+	... 102 more
+Caused by: java.net.ConnectException: ConnectException invoking http://127.0.0.1:8080/sedna-transfer-service-xf/services/SessionService: Connection refused: connect
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1418)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1402)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:188)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:689)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:63)
+	... 118 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.setupWrappedStream(URLConnectionHTTPConduit.java:274)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1361)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1322)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.onFirstWrite(URLConnectionHTTPConduit.java:307)
+	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
+	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1374)
+	... 122 more
+2023-12-14 16:04:02 INFO  SEDNASpringContext:106 - closing "SEDNA Client Framework server-local context @ 533461890" ...
+2023-12-14 16:04:02 INFO  SEDNASpringContext:106 - closing "SEDNA Client Framework Global Context @ 718510084" ...
