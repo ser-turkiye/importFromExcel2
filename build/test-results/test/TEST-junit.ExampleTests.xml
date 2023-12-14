@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="junit.ExampleTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-12-12T07:51:15" hostname="CSB01" time="376.088">
+  <properties/>
+  <testcase name="testForAgentResult" classname="junit.ExampleTests" time="376.075"/>
+  <testcase name="testForJavaAgentMethod" classname="junit.ExampleTests" time="0.013"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
