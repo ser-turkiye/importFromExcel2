@@ -109,6 +109,9 @@ public class ImportProjectDocs extends UnifiedAgent {
                                     descValue = dt.format(descDateValue);
                                     engDocument.setDescriptorValue(descName, descValue);
                                 }
+                            }else if(row.getCell(rowKey).getCellType()==CellType.NUMERIC) {
+                                descValue = String.valueOf((int) row.getCell(rowKey).getNumericCellValue());
+                                engDocument.setDescriptorValue(descName, descValue);
                             }else{
                                 descValue = row.getCell(rowKey).getStringCellValue();
                                 engDocument.setDescriptorValue(descName, descValue);
