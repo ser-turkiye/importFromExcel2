@@ -43,7 +43,7 @@ public class ImportProjectDocs extends UnifiedAgent {
     protected Object execute() {
         this.log.info("Initiate the agent");
         if (this.getEventDocument() == null) {
-            return this.resultError("Null Document object");
+            return this.resultError("Null Document object.");
         } else {
             ses = getSes();
             srv = ses.getDocumentServer();
