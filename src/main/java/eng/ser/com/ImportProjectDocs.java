@@ -31,6 +31,9 @@ public class ImportProjectDocs extends UnifiedAgent {
     String nameDescriptor1 = "ccmPrjDocFileName";
     String nameDescriptorRev = "ccmPrjDocRevision";
     String searchClassName = "Search Engineering Documents";
+    ISession ses = null;
+    IDocumentServer srv = null;
+    String prjCode = "";
     IDescriptor descriptor1;
     IDescriptor descriptor2;
 
@@ -42,9 +45,16 @@ public class ImportProjectDocs extends UnifiedAgent {
         if (this.getEventDocument() == null) {
             return this.resultError("Null Document object");
         } else {
-            ISession ses = this.getSes();
-            IDocumentServer srv = ses.getDocumentServer();
+            ses = getSes();
+            srv = ses.getDocumentServer();
+
             IDocument ldoc = this.getEventDocument();
+            IUser owner = getDocumentServer().getUser(getSes() , ldoc.getOwnerID());
+            boolean isDCCMember = existDCCGVList("CCM_PARAM_CONTRACTOR-MEMBERS","DCC",owner.getID());
+
+            List<IDocument> crsDocs = new ArrayList<>();
+            List<IDocument> engDocs = new ArrayList<>();
+            List<IDocument> allDocs = new ArrayList<>();
 
             HashMap<Integer, String> flds = new HashMap();
             //flds.put(0, "ccmPrjDocFileName");
@@ -82,7 +92,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                 while(var8.hasNext()) {
                     List<String> nodeNames = new ArrayList<>();
                     Map.Entry<String, Row> line = (Map.Entry)var8.next();
-                    String prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
+                    prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
                     String docKey = (String)line.getKey();
                     Row row = (Row)line.getValue();
                     String docRev = row.getCell(1).getStringCellValue();
@@ -119,35 +129,28 @@ public class ImportProjectDocs extends UnifiedAgent {
                             var10000.info("DESC::" + descName + " // VALUE: " + descValue);
                         }
                         engDocument.setDescriptorValue("ccmReleased","1");
-                        engDocument.commit();
-                        this.removeReleaseOldEngDoc(engDocument);
-
-                        this.log.info("Start Link.....");
-                        String chkKeyPrnt = engDocument.getDescriptorValue("ccmPrjDocParentDoc");
-                        String chkKeyCrrs = engDocument.getDescriptorValue("ccmPrjDocTransIncCode");
-                        this.log.info("Start Link for Parent Number:" + chkKeyPrnt + " child number:" + engDocument.getDescriptorValue("ccmPrjDocNumber"));
-                        if (prjCode != null){
-                            if(chkKeyPrnt != null){
-                                IDocument prntDocument = this.getEngDocumentByNumber(ses, prjCode, chkKeyPrnt);
-                                this.log.info("Parent Doc ? " + prntDocument);
-                                if (prntDocument != null && !Objects.equals(prntDocument.getID(), engDocument.getID())) {
-                                    ILink lnk2 = srv.createLink(ses, prntDocument.getID(), (INodeGeneric)null, engDocument.getID());
-                                    lnk2.commit();
-                                    this.log.info("Created Link...");
-                                }
-                            }
-                            if(chkKeyCrrs != null){
-                                IDocument prntDocument = this.getEngDocumentByNumber(ses, prjCode, chkKeyCrrs);
-                                this.log.info("Parent (CRRS) Doc ? " + prntDocument);
-                                if (prntDocument != null && !Objects.equals(prntDocument.getID(), engDocument.getID())) {
-                                    ILink lnk2 = srv.createLink(ses, prntDocument.getID(), (INodeGeneric)null, engDocument.getID());
-                                    lnk2.commit();
-                                    this.log.info("Created Link...");
-                                }
-                            }
+                        engDocument.setDescriptorValue("ccmPrjDocStatus","10");
+                        if(isDCCMember) {
+                            engDocument.setDescriptorValue("ccmPrjDocStatus", "50");
                         }
+                        engDocument.commit();
+
+                        if(!engDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
+                            engDocs.add(engDocument);
+                        }
+                        if(engDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
+                            crsDocs.add(engDocument);
+                        }
+
+                        this.removeReleaseOldEngDoc(engDocument);
                     }
                 }
+
+                allDocs.addAll(crsDocs);
+                allDocs.addAll(engDocs);
+
+                setParent(allDocs);
+
                 this.log.info("Finished");
                 return this.resultSuccess("Ended successfully");
             } catch (Exception var15) {
@@ -155,7 +158,60 @@ public class ImportProjectDocs extends UnifiedAgent {
             }
         }
     }
+    public boolean existDCCGVList(String paramName, String key1, String key2) {
+        boolean rtrn = false;
+        IStringMatrix settingsMatrix = getDocumentServer().getStringMatrix(paramName, getSes());
+        String rowValuePrjCode = "";
+        String rowValueParamUserID = "";
+        String rowValueParamDCC = "";
+        String rowValueParamMyComp = "";
+        for(int i = 0; i < settingsMatrix.getRowCount(); i++) {
+            rowValuePrjCode = settingsMatrix.getValue(i, 0);
+            rowValueParamUserID = settingsMatrix.getValue(i, 5);
+            rowValueParamDCC = settingsMatrix.getValue(i, 6);
+            rowValueParamMyComp = settingsMatrix.getValue(i, 7);
 
+            //if (!Objects.equals(rowValuePrjCode, prjCode)){continue;}
+            if (!Objects.equals(rowValueParamDCC, key1)){continue;}
+            if (!Objects.equals(rowValueParamUserID, key2)){continue;}
+            if (!Objects.equals(rowValueParamMyComp, "1")){continue;}
+
+            return true;
+        }
+        return rtrn;
+    }
+    public void setParent(List<IDocument> documentList){
+        for(IDocument engDocument : documentList){
+            this.log.info("Start Link.....");
+            String chkKeyPrnt = engDocument.getDescriptorValue("ccmPrjDocParentDoc");
+            String chkKeyCrrs = engDocument.getDescriptorValue("ccmPrjDocTransIncCode");
+            this.log.info("Start Link for Parent Number:" + chkKeyPrnt + " child number:" + engDocument.getDescriptorValue("ccmPrjDocNumber"));
+            if (prjCode != null){
+                if(chkKeyPrnt != null){
+                    IDocument prntDocument = getEngDocumentByNumber(ses, prjCode, chkKeyPrnt);
+                    this.log.info("Parent Doc ? " + prntDocument);
+                    if (prntDocument != null && !prntDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
+                        if (!Objects.equals(prntDocument.getID(), engDocument.getID())) {
+                            ILink lnk2 = srv.createLink(ses, prntDocument.getID(), (INodeGeneric) null, engDocument.getID());
+                            lnk2.commit();
+                            this.log.info("Created Link...");
+                        }
+                    }
+                }
+                if(chkKeyCrrs != null){
+                    IDocument prntDocument = this.getEngDocumentByNumber(ses, prjCode, chkKeyCrrs);
+                    this.log.info("Parent (CRRS) Doc ? " + prntDocument);
+                    if (prntDocument != null && prntDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
+                        if (!Objects.equals(prntDocument.getID(), engDocument.getID())) {
+                            ILink lnk2 = srv.createLink(ses, prntDocument.getID(), (INodeGeneric) null, engDocument.getID());
+                            lnk2.commit();
+                            this.log.info("Created Link...");
+                        }
+                    }
+                }
+            }
+        }
+    }
     public void removeReleaseOldEngDoc(IDocument doc1){
         IDocument result = null;
         ISession session = this.getSes();
@@ -218,7 +274,6 @@ public class ImportProjectDocs extends UnifiedAgent {
         log.info("Add NewNode Final ?? : " + newNode);
         return newNode;
     }
-
     public INode createNewNode(INode parentNode, String newNodeName) throws Exception {
         IFolder prjFolder = getProjectFolder();
         if(prjFolder == null){
@@ -325,7 +380,6 @@ public class ImportProjectDocs extends UnifiedAgent {
         }
         return add2Node;
     }
-
     public IFolder getProjectFolder() throws Exception {
         log.info("Getting Project Folder");
         String projectNumber = getEventDocument().getDescriptorValue("ccmPRJCard_code");
@@ -344,7 +398,6 @@ public class ImportProjectDocs extends UnifiedAgent {
         if(objects.length < 1)throw new Exception("Not Folder with: " + projectNumber + " was found");
         return (IFolder) objects[0];
     }
-
     private IInformationObject[] createQuery(String dbName , String whereClause , int maxHits){
         String[] databaseNames = {dbName};
 
@@ -361,7 +414,6 @@ public class ImportProjectDocs extends UnifiedAgent {
         if(hits == null) return null;
         else return hits.getInformationObjects();
     }
-
     public static HashMap<String, Row> listOfDocuments(Workbook workbook) throws IOException {
         HashMap<String, Row> rtrn = new HashMap();
         Sheet sheet = workbook.getSheetAt(0);
@@ -381,7 +433,6 @@ public class ImportProjectDocs extends UnifiedAgent {
         }
         return rtrn;
     }
-
     public String exportDocumentContent(IDocument document, String exportPath) throws IOException {
         String expt = "";
         String documentID = document.getDocumentID().getID();
@@ -437,8 +488,6 @@ public class ImportProjectDocs extends UnifiedAgent {
 
         return expt;
     }
-
-
     public IQueryDlg findQueryDlgForQueryClass(IQueryClass queryClass) {
         IQueryDlg dlg = null;
         if (queryClass != null) {
@@ -447,7 +496,6 @@ public class ImportProjectDocs extends UnifiedAgent {
 
         return dlg;
     }
-
     public IQueryParameter query(ISession session, IQueryDlg queryDlg, Map<String, String> descriptorValues) {
         IDocumentServer documentServer = session.getDocumentServer();
         ISerClassFactory classFactory = documentServer.getClassFactory();
@@ -480,12 +528,10 @@ public class ImportProjectDocs extends UnifiedAgent {
 
         return queryParameter;
     }
-
     public IDocumentHitList executeQuery(ISession session, IQueryParameter queryParameter) {
         IDocumentServer documentServer = session.getDocumentServer();
         return documentServer.query(queryParameter, session);
     }
-
     public IDocument getEngDocument(ISession session, String prjCode, String docKey) throws IOException {
         IDocument result = null;
         IDocumentServer documentServer = session.getDocumentServer();
@@ -506,8 +552,7 @@ public class ImportProjectDocs extends UnifiedAgent {
             return null;
         }
     }
-
-    public IDocument getEngDocumentByNumber(ISession session, String prjCode, String docKey) throws IOException {
+    public IDocument getEngDocumentByNumber(ISession session, String prjCode, String docKey) {
         IDocument result = null;
         log.info("Search Eng Document By PRJ Code:" + prjCode);
         log.info("Search Eng Document By Number:" + docKey);
@@ -586,7 +631,6 @@ public class ImportProjectDocs extends UnifiedAgent {
                 return null;
         }
     }
-
     public static LocalDateTime getLocalDateTime(String strDate) {
         strDate = strDate.replace("TRT", "Europe/Istanbul");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzzz yyyy");

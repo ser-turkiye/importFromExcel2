@@ -24,7 +24,7 @@ class ExampleTests {
         def agent = new ImportProjectDocs();
 
         //String ids ="SD06D_QCON24859b3414-ee73-4151-9b0d-0e5b93edf494182023-10-13T14:28:26.483Z011"
-        String ids ="SD07PRJ_DOC242061e702-801a-423e-a161-5754fbf47410182023-12-21T07:56:36.878Z011"
+        String ids ="SD06D_QCON2487db58c0-389c-468a-9de9-635cda71054c182023-12-21T10:07:33.909Z011"
 
 
 
