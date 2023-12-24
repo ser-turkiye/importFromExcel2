@@ -52,10 +52,6 @@ public class ImportProjectDocs extends UnifiedAgent {
             IUser owner = getDocumentServer().getUser(getSes() , ldoc.getOwnerID());
             boolean isDCCMember = existDCCGVList("CCM_PARAM_CONTRACTOR-MEMBERS","DCC",owner.getID());
 
-            List<IDocument> crsDocs = new ArrayList<>();
-            List<IDocument> engDocs = new ArrayList<>();
-            List<IDocument> allDocs = new ArrayList<>();
-
             HashMap<Integer, String> flds = new HashMap();
             //flds.put(0, "ccmPrjDocFileName");
             flds.put(1, "ccmPrjDocNumber");
@@ -75,10 +71,6 @@ public class ImportProjectDocs extends UnifiedAgent {
             flds.put(15, "ccmPrjDocReqDate");
             flds.put(16, "ccmPrjDocDueDate");
             flds.put(17, "ccmPrjDocTransIncCode");
-            //flds.put(8, "ccmPrjDocClient");
-            //flds.put(9, "ccmPrjDocClientPrjNumber");
-            //flds.put(10, "ccmPRJCard_name");
-            //flds.put(7, "ccmPrjDocCode");
 
             try {
 
@@ -134,24 +126,9 @@ public class ImportProjectDocs extends UnifiedAgent {
                             engDocument.setDescriptorValue("ccmPrjDocStatus", "50");
                         }
                         engDocument.commit();
-
-                        if(!engDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
-                            engDocs.add(engDocument);
-                        }
-                        if(engDocument.getDescriptorValue("ccmPrjDocCategory").trim().equalsIgnoreCase("TRANSMITTAL")) {
-                            crsDocs.add(engDocument);
-                        }
-
-                        this.removeReleaseOldEngDoc(engDocument);
                     }
                 }
-
-                allDocs.addAll(crsDocs);
-                allDocs.addAll(engDocs);
-
-                setParent(allDocs);
-
-                this.log.info("Finished");
+                this.log.info("Import ProjectDoc from Excel Finished");
                 return this.resultSuccess("Ended successfully");
             } catch (Exception var15) {
                 throw new RuntimeException(var15);
