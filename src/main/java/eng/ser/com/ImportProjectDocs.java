@@ -104,6 +104,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                             Logger var10000 = this.log;
                             int rowKey = (Integer)ffld.getKey();
                             String descName = (String)ffld.getValue();
+
                             if(descName.contains("Date")){
                                 DateFormat dt = new SimpleDateFormat("yyyyMMdd");
                                 descDateValue = row.getCell(rowKey).getDateCellValue();
@@ -115,7 +116,11 @@ public class ImportProjectDocs extends UnifiedAgent {
                                 descValue = String.valueOf((int) row.getCell(rowKey).getNumericCellValue());
                                 engDocument.setDescriptorValue(descName, descValue);
                             }else{
-                                descValue = row.getCell(rowKey).getStringCellValue();
+                                if(descName.equals("ccmPrjDocOiginator")){
+                                    descValue = row.getCell(rowKey).getStringCellValue().toUpperCase();
+                                }else {
+                                    descValue = row.getCell(rowKey).getStringCellValue();
+                                }
                                 engDocument.setDescriptorValue(descName, descValue);
                             }
                             var10000.info("DESC::" + descName + " // VALUE: " + descValue);
