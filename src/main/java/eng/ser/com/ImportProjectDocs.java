@@ -81,6 +81,34 @@ public class ImportProjectDocs extends UnifiedAgent {
                 fist.close();
                 Iterator var8 = list.entrySet().iterator();
 
+                ///ilk dongude doc no, rev no guncelle
+                while(var8.hasNext()) {
+                    Map.Entry<String, Row> line = (Map.Entry)var8.next();
+                    prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
+                    String docKey = (String)line.getKey();
+                    Row row = (Row)line.getValue();
+                    String docNum = row.getCell(1).getStringCellValue();
+                    String docRev = "";
+                    if(row.getCell(2) != null) {
+                        if (row.getCell(2).getCellType() == CellType.NUMERIC) {
+                            docRev = String.valueOf((int) row.getCell(2).getNumericCellValue());
+                        } else {
+                            if (row.getCell(2).getStringCellValue() != null) {
+                                docRev = row.getCell(2).getStringCellValue();
+                            }
+                        }
+                    }
+
+                    IDocument engDocument = this.getEngDocument(ses, prjCode, docKey);
+                    if (engDocument != null) {
+                        engDocument.setDescriptorValue("ccmPrjDocNumber", docNum);
+                        engDocument.setDescriptorValue("ccmPrjDocRevision", docRev);
+                        engDocument.commit();
+                    }
+                }
+
+                //ikinci dongude hepsi
+                var8 = list.entrySet().iterator();
                 while(var8.hasNext()) {
                     List<String> nodeNames = new ArrayList<>();
                     Map.Entry<String, Row> line = (Map.Entry)var8.next();
