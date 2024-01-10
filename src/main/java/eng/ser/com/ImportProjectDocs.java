@@ -73,15 +73,16 @@ public class ImportProjectDocs extends UnifiedAgent {
             flds.put(17, "ccmPrjDocTransIncCode");
 
             try {
-
                 String excelPath = this.exportDocumentContent(ldoc, "C:/tmp2/bulk/import");
                 FileInputStream fist = new FileInputStream(excelPath);
+                this.log.info("Exported excel file to path:" + excelPath);
                 Workbook wrkb = new XSSFWorkbook(fist);
                 HashMap<String, Row> list = listOfDocuments(wrkb);
                 fist.close();
-                Iterator var8 = list.entrySet().iterator();
 
+                this.log.info("Start first loop.");
                 ///ilk dongude doc no, rev no guncelle
+                Iterator var8 = list.entrySet().iterator();
                 while(var8.hasNext()) {
                     Map.Entry<String, Row> line = (Map.Entry)var8.next();
                     prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
@@ -107,6 +108,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                     }
                 }
 
+                this.log.info("Start second loop.");
                 //ikinci dongude hepsi
                 var8 = list.entrySet().iterator();
                 while(var8.hasNext()) {
@@ -115,11 +117,10 @@ public class ImportProjectDocs extends UnifiedAgent {
                     prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
                     String docKey = (String)line.getKey();
                     Row row = (Row)line.getValue();
-                    String docRev = row.getCell(1).getStringCellValue();
+
                     IDocument engDocument = this.getEngDocument(ses, prjCode, docKey);
                     if (engDocument != null) {
-                        this.log.info("*** ENGINERING DOC FOUND :" + docKey);
-                        this.log.info("Doc no is " + docKey + " Values is " + row.toString());
+                        this.log.info("ENGINERING DOC FOUND :" + docKey);
                         Iterator var13 = flds.entrySet().iterator();
 
                         while(var13.hasNext()) {
@@ -129,10 +130,10 @@ public class ImportProjectDocs extends UnifiedAgent {
                             }
                             String descValue = "";
                             Date descDateValue = new Date();
-                            Logger var10000 = this.log;
+
                             int rowKey = (Integer)ffld.getKey();
                             String descName = (String)ffld.getValue();
-
+                            this.log.info("START SET DESCRIPTOR NAME :" + descName);
                             if(descName.contains("Date")){
                                 if(row.getCell(rowKey).getCellType()==CellType.STRING) {
                                     String sDate1 = row.getCell(rowKey).getStringCellValue();
@@ -159,7 +160,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                                 }
                                 engDocument.setDescriptorValue(descName, descValue);
                             }
-                            var10000.info("DESC::" + descName + " // VALUE: " + descValue);
+                            this.log.info("FINISH SET THIS VALUE: " + descValue);
                         }
                         engDocument.setDescriptorValue("ccmReleased","1");
                         engDocument.setDescriptorValue("ccmPrjDocStatus","10");
