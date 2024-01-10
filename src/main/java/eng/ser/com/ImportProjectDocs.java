@@ -36,7 +36,7 @@ public class ImportProjectDocs extends UnifiedAgent {
     String prjCode = "";
     IDescriptor descriptor1;
     IDescriptor descriptor2;
-
+    CellType cellType;
     public ImportProjectDocs() {
     }
 
@@ -134,11 +134,19 @@ public class ImportProjectDocs extends UnifiedAgent {
                             String descName = (String)ffld.getValue();
 
                             if(descName.contains("Date")){
-                                DateFormat dt = new SimpleDateFormat("yyyyMMdd");
-                                descDateValue = row.getCell(rowKey).getDateCellValue();
-                                if(descDateValue!=null) {
-                                    descValue = dt.format(descDateValue);
+                                if(row.getCell(rowKey).getCellType()==CellType.STRING) {
+                                    String sDate1 = row.getCell(rowKey).getStringCellValue();
+                                    Date date1 = new SimpleDateFormat("dd.MM.yyyy").parse(sDate1);
+                                    DateFormat dt = new SimpleDateFormat("yyyyMMdd");
+                                    descValue = dt.format(date1);
                                     engDocument.setDescriptorValue(descName, descValue);
+                                }else {
+                                    DateFormat dt = new SimpleDateFormat("yyyyMMdd");
+                                    descDateValue = row.getCell(rowKey).getDateCellValue();
+                                    if (descDateValue != null) {
+                                        descValue = dt.format(descDateValue);
+                                        engDocument.setDescriptorValue(descName, descValue);
+                                    }
                                 }
                             }else if(row.getCell(rowKey).getCellType()==CellType.NUMERIC) {
                                 descValue = String.valueOf((int) row.getCell(rowKey).getNumericCellValue());
