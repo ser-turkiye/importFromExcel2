@@ -36,7 +36,7 @@ public class ImportProjectDocs extends UnifiedAgent {
     String prjCode = "";
     IDescriptor descriptor1;
     IDescriptor descriptor2;
-    CellType cellType;
+    CellType cellType;//test
     public ImportProjectDocs() {
     }
 
