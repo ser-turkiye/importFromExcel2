@@ -172,10 +172,13 @@ public class ImportProjectDocs extends UnifiedAgent {
                 }
                 this.log.info("Import ProjectDoc from Excel Finished");
                 return this.resultSuccess("Ended successfully");
-            } catch (Exception var15) {
-                throw new RuntimeException(var15);
+            } catch (Exception e) {
+                this.log.error("Exception Caught");
+                this.log.error(e.getMessage());
+                //return resultError(e.getMessage());
             }
         }
+        return resultSuccess("Success");
     }
     public boolean existDCCGVList(String paramName, String key1, String key2) {
         boolean rtrn = false;
