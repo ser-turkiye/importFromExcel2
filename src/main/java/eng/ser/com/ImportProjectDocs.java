@@ -36,7 +36,7 @@ public class ImportProjectDocs extends UnifiedAgent {
     String prjCode = "";
     IDescriptor descriptor1;
     IDescriptor descriptor2;
-    CellType cellType;//test
+    CellType cellType;
     public ImportProjectDocs() {
     }
 
@@ -47,14 +47,14 @@ public class ImportProjectDocs extends UnifiedAgent {
         } else {
             ses = getSes();
             srv = ses.getDocumentServer();
-
+            Integer cnt = 0;
             IDocument ldoc = this.getEventDocument();
             IUser owner = getDocumentServer().getUser(getSes() , ldoc.getOwnerID());
             boolean isDCCMember = existDCCGVList("CCM_PARAM_CONTRACTOR-MEMBERS","DCC",owner.getID());
 
             HashMap<Integer, String> flds = new HashMap();
             //flds.put(0, "ccmPrjDocFileName");
-            flds.put(1, "ccmPrjDocNumber");
+            /*flds.put(1, "ccmPrjDocNumber");
             flds.put(2, "ccmPrjDocRevision");
             flds.put(3, "ObjectName");
             flds.put(4, "ccmPrjDocCategory");
@@ -70,7 +70,7 @@ public class ImportProjectDocs extends UnifiedAgent {
             flds.put(14, "ccmPrjDocDate");
             flds.put(15, "ccmPrjDocReqDate");
             flds.put(16, "ccmPrjDocDueDate");
-            flds.put(17, "ccmPrjDocTransIncCode");
+            flds.put(17, "ccmPrjDocTransIncCode");*/
 
             try {
                 String excelPath = this.exportDocumentContent(ldoc, "C:/tmp2/bulk/import");
@@ -78,8 +78,13 @@ public class ImportProjectDocs extends UnifiedAgent {
                 this.log.info("Exported excel file to path:" + excelPath);
                 Workbook wrkb = new XSSFWorkbook(fist);
                 HashMap<String, Row> list = listOfDocuments(wrkb);
+                List<String> fields = fieldsOfDocuments(wrkb);
                 fist.close();
 
+                for(String field : fields){
+                    flds.put(cnt, field);
+                    cnt++;
+                }
                 this.log.info("Start first loop.");
                 ///ilk dongude doc no, rev no guncelle
                 Iterator var8 = list.entrySet().iterator();
@@ -88,6 +93,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                     prjCode = ldoc.getDescriptorValue("ccmPRJCard_code");
                     String docKey = (String)line.getKey();
                     Row row = (Row)line.getValue();
+
                     String docNum = row.getCell(1).getStringCellValue();
                     String docRev = "";
                     if(row.getCell(2) != null) {
@@ -209,7 +215,7 @@ public class ImportProjectDocs extends UnifiedAgent {
 
         while(var3.hasNext()) {
             Row row = (Row)var3.next();
-            if (row.getRowNum() != 0) {
+            if (row.getRowNum() != 0 && row.getRowNum() != 1) {
                 Cell cll1 = row.getCell(0);
                 if (cll1 != null) {
                     String indx = cll1.getRichStringCellValue().getString();
@@ -218,6 +224,28 @@ public class ImportProjectDocs extends UnifiedAgent {
                     }
                 }
             }
+        }
+        return rtrn;
+    }
+    public static List<String> fieldsOfDocuments(Workbook workbook) throws IOException {
+        List<String> rtrn = new ArrayList<>();
+        Sheet sheet = workbook.getSheetAt(0);
+        String indx = "";
+        Iterator var3 = sheet.iterator();
+        Integer c = 0;
+        while(var3.hasNext()) {
+            Row row = (Row)var3.next();
+            if (row.getRowNum() == 0) {
+                while (c<35) { ///toplam fields sayısı
+                    Cell cll1 = row.getCell(c);
+                    if (cll1 != null) {
+                        indx = cll1.getRichStringCellValue().getString();
+                        if(Objects.equals(indx, "")){break;}
+                        rtrn.add(indx);
+                    }else{break;}
+                    c++;
+                }
+            } else{break;}
         }
         return rtrn;
     }
