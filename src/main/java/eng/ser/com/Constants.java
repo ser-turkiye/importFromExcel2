@@ -16,9 +16,13 @@ public class Constants {
             public static String FinalPath = "C:\\SER\\TEMP\\output-4.docx";
         }
     }
+    public static class Databases{
+        public static final String MDPRecordDB = "PRJ_FOLDER";
+    }
     public static class ClassIDs{
         public static final String ProjectFolder = "32e74338-d268-484d-99b0-f90187240549";
         public static final String ProjectDocsFolder = "897b6ca0-441c-4c43-8cf9-735d8d7453c6";
+        public static final String MDPRecord = "23368685-1da0-4fa8-90a5-441048ed4f2e";
         public static final String DocumentCycle = "66975476-3c0b-4781-bac1-0a661c40bf97";
         public static final String ProjDocumentArchive = "acb37372-0240-4a44-95e2-424b8f93ffe4";
         public static final String CRSProjDocumentArchive = "3e1fe7b3-3e86-4910-8155-c29b662e71d6";
@@ -31,6 +35,8 @@ public class Constants {
 
     public static class Literals {
         public static final String ProjectNumberDescriptor = "CCMPRJCARD_CODE";
+        public static final String ProjectDocNumberDescriptor = "CCMPRJDOCNUMBER";
+        public static final String ProjectDisciplineDescriptor = "CCMPRJDOCDISCIPLINE";
         public static final String ProjectFolderDB = "PRJ_FOLDER";
     }
 
