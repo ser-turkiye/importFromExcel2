@@ -51,7 +51,7 @@ public class ImportProjectDocs extends UnifiedAgent {
             IDocument ldoc = this.getEventDocument();
             IUser owner = getDocumentServer().getUser(getSes() , ldoc.getOwnerID());
             boolean isDCCMember = existDCCGVList("CCM_PARAM_CONTRACTOR-MEMBERS","DCC",owner.getID());
-
+            log.info("ImportFromExcel. User Is DCC?" + isDCCMember);
             HashMap<Integer, String> flds = new HashMap();
             //flds.put(0, "ccmPrjDocFileName");
             /*flds.put(1, "ccmPrjDocNumber");
@@ -73,6 +73,8 @@ public class ImportProjectDocs extends UnifiedAgent {
             flds.put(17, "ccmPrjDocTransIncCode");*/
 
             try {
+                boolean isAdmin = isAdmin(owner);
+                log.info("ImportFromExcel. User Is Admin?" + isAdmin);
                 String excelPath = this.exportDocumentContent(ldoc, "C:/tmp2/bulk/import");
                 FileInputStream fist = new FileInputStream(excelPath);
                 this.log.info("Exported excel file to path:" + excelPath);
@@ -170,7 +172,7 @@ public class ImportProjectDocs extends UnifiedAgent {
                         }
                         engDocument.setDescriptorValue("ccmReleased","1");
                         engDocument.setDescriptorValue("ccmPrjDocStatus","10");
-                        if(isDCCMember) {
+                        if(isDCCMember || isAdmin) {
                             engDocument.setDescriptorValue("ccmPrjDocStatus", "50");
                         }
                         engDocument.commit();
@@ -185,6 +187,17 @@ public class ImportProjectDocs extends UnifiedAgent {
             }
         }
         return resultSuccess("Success");
+    }
+    public boolean isAdmin(IUser user) throws Exception {
+        try {
+            boolean rtrn = false;
+            IRole admRole = getSes().getDocumentServer().getRoleByName(getSes(),"admins");
+            String[] roleIDs = (user != null ? user.getRoleIDs() : null);
+            rtrn = Arrays.asList(roleIDs).contains(admRole.getID());
+            return rtrn;
+        }catch (Exception e){
+            throw new Exception("Exeption Caught..isAdmin: " + e);
+        }
     }
     public boolean existDCCGVList(String paramName, String key1, String key2) {
         boolean rtrn = false;
