@@ -199,7 +199,7 @@ public class ImportProjectDocs extends UnifiedAgent {
             rowValueParamDCC = settingsMatrix.getValue(i, 6);
             rowValueParamMyComp = settingsMatrix.getValue(i, 7);
 
-            //if (!Objects.equals(rowValuePrjCode, prjCode)){continue;}
+            if (!Objects.equals(rowValuePrjCode, prjCode)){continue;}
             if (!Objects.equals(rowValueParamDCC, key1)){continue;}
             if (!Objects.equals(rowValueParamUserID, key2)){continue;}
             if (!Objects.equals(rowValueParamMyComp, "1")){continue;}
